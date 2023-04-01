@@ -24,14 +24,17 @@ summary(data)
 # dim(dupsdf)
 # rm(dupsdf)
 
-# min and max for all variables besides unprofits
-max(data[,-1])
-min(data[,-1])
+# min and max for all variables besides X and unprofits
+max(data[,-(1:2)])
+min(data[,-(1:2)])
 
-# max and min for unprofits 
+# max and min for X 
 max(data[,1])
 min(data[,1])
 
+# max and min for unprofits 
+max(data[,2])
+min(data[,2])
 
 set.seed(27)
 # get rid of variables with no obs
