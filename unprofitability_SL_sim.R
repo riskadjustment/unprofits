@@ -132,10 +132,10 @@ cvRisk<-fit.data.SL$cvRisk
 Z<-fit.data.SL$Z
 fitLibrary<-fit.data.SL$fitLibrary
 
-save(fit.data.SL, file=paste0("data/fit_", df, ".Rdata"))
-save(cSums, file=paste0("data/cSums_", df, ".Rdata"))
-save(SLPreds, file=paste0("data/SLPreds_", df, ".Rdata"))
-save(coef, file=paste0("data/coef_", df, ".Rdata"))
-save(cvRisk, file=paste0("data/cvRisk_", df, ".Rdata"))
-save(Z, file=paste0("data/Z_", df, ".Rdata"))
-save(fitLibrary, file=paste0("data/fitLibrary_", df, ".Rdata"))
+saveRDS(fit.data.SL, file=paste0("data/fit_", df, ".rds"))
+saveRDS(cSums, file=paste0("data/cSums_", df, ".rds"))
+saveRDS(SLPreds, file=paste0("data/SLPreds_", df, ".rds"))
+saveRDS(coef, file=paste0("data/coef_", df, ".rds"))
+saveRDS(cvRisk, file=paste0("data/cvRisk_", df, "rds"))
+saveRDS(Z, file=paste0("data/Z_", df, ".rds"))
+saveRDS(fitLibrary, file=paste0("data/fitLibrary_", df, ".rds"))
