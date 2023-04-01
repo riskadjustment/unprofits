@@ -7,9 +7,13 @@ options(mc.cores=5)
 
 
 # full simulated data set
-load("/data/markscan_authorized_users/bergquist/EI/df_sim_full.Rdata")
-data <- df_sim
+#load("/data/markscan_authorized_users/bergquist/EI/df_sim_full.Rdata")
+#data <- df_sim
 ## if downloading data from github, will be in csv form
+## run csv2rds.R before the start of your project to convert the csv files to rds files
+## after that, you load df_sim.rds or df_sim_250.rds to start your project
+data <- readRDS("data/df_sim_250.rds")
+#data <- readRDS("data/df_sim.rds")
 
 # check the data
 summary(data)
