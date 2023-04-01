@@ -5,15 +5,15 @@ detectCores()
 library(doMC)
 options(mc.cores=5)
 
-
 # full simulated data set
 #load("/data/markscan_authorized_users/bergquist/EI/df_sim_full.Rdata")
 #data <- df_sim
 ## if downloading data from github, will be in csv form
 ## run csv2rds.R before the start of your project to convert the csv files to rds files
 ## after that, you load df_sim.rds or df_sim_250.rds to start your project
-data <- readRDS("data/df_sim_250.rds")
-#data <- readRDS("data/df_sim.rds")
+df <- "df_sim_250"
+#df <- "df_sim"
+data <- readRDS(paste0("data/", df, ".rds"))
 
 # check the data
 summary(data)
@@ -132,10 +132,10 @@ cvRisk<-fit.data.SL$cvRisk
 Z<-fit.data.SL$Z
 fitLibrary<-fit.data.SL$fitLibrary
 
-save(fit.data.SL, file="/data/markscan_authorized_users/bergquist/EI/fullfit_sim.Rdata")
-save(cSums, file="/data/markscan_authorized_users/bergquist/EI/fullcSums_sim.Rdata")
-save(SLPreds, file="/data/markscan_authorized_users/bergquist/EI/fullSLPreds_sim.Rdata")
-save(coef, file="/data/markscan_authorized_users/bergquist/EI/fullcoef_sim.Rdata")
-save(cvRisk, file="/data/markscan_authorized_users/bergquist/EI/fullcvRisk_sim.Rdata")
-save(Z, file="/data/markscan_authorized_users/bergquist/EI/fullZ_sim.Rdata")
-save(fitLibrary, file="/data/markscan_authorized_users/bergquist/EI/fullfitLibrary_sim.Rdata")
+save(fit.data.SL, file=paste0("data/fit_", df, ".Rdata"))
+save(cSums, file=paste0("data/cSums_", df, ".Rdata"))
+save(SLPreds, file=paste0("data/SLPreds_", df, ".Rdata"))
+save(coef, file=paste0("data/coef_", df, ".Rdata"))
+save(cvRisk, file=paste0("data/cvRisk_", df, ".Rdata"))
+save(Z, file=paste0("data/Z_", df, ".Rdata"))
+save(fitLibrary, file=paste0("data/fitLibrary_", df, ".Rdata"))
